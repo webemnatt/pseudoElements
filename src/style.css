@@ -1,0 +1,76 @@
+.redondo {
+  background-color: bisque;
+  width: 00px;
+  height: 0px; /*faz duplicar o after quando valor maior que 0px*/
+  position: relative;
+  /*display: flex;*/
+}
+
+.redondo:before {
+  /*criou apenas um círculo*/
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  content: 'before'; /*círculo se ajusta ao tamanho do texto*/
+  color: aliceblue;
+  border-radius: 50%;
+  padding: 0%; /* aumenta a borda do circulo (valor negativo sem display flex faz o texto vazar para fora*/
+  margin-left: 30px; /* afasta da borda esquerda da div o círculo position absolute*/
+  margin-top: 50px; /*afasta do topo da div (position absolute*/
+  position: absolute; /* fez o circulo ficar maior*/
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* centraliza na linha o texto*/
+  border-color: black;
+  display: flex;
+}
+
+.redondo:after {
+  /* por que duplica? Porque há height da div é maior que 0px;*/
+  width: 50px;
+  height: 50px;
+  background-color: blueviolet;
+  content: 'after';
+  color: aliceblue;
+  border-radius: 50%; /*fez o quadrado ficar redondo*/
+  margin-top: 5px; /* não se move quando não há valores width ou height na div*/
+  margin-left: 5%;
+  position: absolute;
+  justify-content: center; /*centraliza texto no círculo*/
+  align-items: center; /*alinha texto ao centro do conteudo*/
+  display: flex; /*permitiu o alinhamento do texto ao centro*/
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+}
+
+.arrow:after {
+  background-color: purple;
+  content: 'para cima after'; /* o texto fica fora do triangulo*/
+  color: aliceblue;
+  border-left: 100px solid yellow; /*se apenas este estiver zerado, aponta para diagonal esquerda para baixo*/
+  border-right: 100px solid red; /*se apenas este zerado, faz meio triangulo apontado para diagonal direita para baixo*/
+  border-bottom: 100px solid green; /*é o que define o triângulo*/
+  margin-left: 200px;
+  margin-top: 50px;
+  position: absolute; /*absolute desenha um paralelepipedo*/
+  display: flex;
+}
+
+.arrow:before {
+  background-color: darkcyan;
+  content: 'para baixo before'; /* o texto fica fora do triangulo*/
+  color: aliceblue;
+  text-align: center;
+  justify-content: center;
+
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 200px solid brown;
+
+  margin-left: 200px;
+  margin-top: 15px;
+  display: flex;
+}
