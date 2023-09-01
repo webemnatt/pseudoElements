@@ -13,7 +13,7 @@
   background-color: blue;
   content: 'before'; /*círculo se ajusta ao tamanho do texto*/
   color: aliceblue;
-  border-radius: 50%;
+  border-radius: 5%;
   padding: 0%; /* aumenta a borda do circulo (valor negativo sem display flex faz o texto vazar para fora*/
   margin-left: 30px; /* afasta da borda esquerda da div o círculo position absolute*/
   margin-top: 50px; /*afasta do topo da div (position absolute*/
@@ -73,4 +73,35 @@
   margin-left: 200px;
   margin-top: 15px;
   display: flex;
+}
+
+.wrapper {
+  text-align: center;
+  color: white;
+}
+
+.alive {
+  position: relative;
+  background-color: red;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.alive::before {
+  display: flex;
+  content: '';
+  background-image: url('../public/alive-icon.svg');
+  background-repeat: no-repeat;
+  background-color: red;
+  background-size: 24px 18px;
+  background-position: center center;
+  width: 40px;
+  height: 38.4px;
+  /* color: aliceblue; */
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-left: -40px; /* afasta da borda esquerda da div o círculo position absolute*/
+  margin-top: -10px; /*afasta do topo da div (position absolute*/
+  position: absolute; /* fez o circulo ficar maior*/
 }
